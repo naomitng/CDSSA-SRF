@@ -1,0 +1,46 @@
+#faForm, #adForm, #stuForm {
+    max-width: 60%;
+    margin: auto;
+    padding: 20px;
+}
+
+#cbFac, #cbStu, #cbAdmin {
+    margin-bottom: 10px;
+}
+
+.custom-form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.form-group {
+    width: 48%;
+}
+
+.stuName,
+.designation,
+.stuYear,
+.endorsed,
+.stuDept {
+    width: 100%;
+}
+
+#content {
+    position:relative;
+}
+.darkClass
+{
+    background-color: white;
+    filter:alpha(opacity=50); /* IE */
+    opacity: 0.5; /* Safari, Opera */
+    -moz-opacity:0.50; /* FireFox */
+    z-index: 20;
+    height: 80%;
+    width: 100%;
+    background-repeat:no-repeat;
+    background-position:center;
+    position:absolute;
+    top: 0px;
+    left: 0px;
+}

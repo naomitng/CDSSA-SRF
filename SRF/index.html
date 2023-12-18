@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header class="text-center">
+        <img src="header.png" alt="" class="">
+        <hr class="my-1">
+    </header>
+
+    <!-- FACULTY -->
+    <form action="" method="post" id="faForm">
+
+        <div class="form-check" id="cbFac">
+            <input class="form-check-input" type="checkbox" value="" id="boxFac">
+            <label class="form-check-label" for="flexCheckDefault1">
+              Faculty Form
+            </label>
+        </div>
+
+        <div class="custom-form-group" id="content">
+            <div id="darkLayerFa" class="darkClass" style="display:none"></div>
+            <div id="darkLayer" class="darkClass" style="display:none"></div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Faculty (College)</label>
+                <input type="text" class="form-control" id="fCollege">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" id="fName">
+            </div>
+        </div>
+        <hr class="my-4">
+    </form>
+
+    <!-- ADMIN -->
+
+    <form action="" method="post" id="adForm">
+        <div class="form-check" id="cbAdmin">
+            <input class="form-check-input" type="checkbox" value="" id="boxAd">
+            <label class="form-check-label" for="flexCheckDefault2">
+              Admin Form
+            </label>
+        </div>
+    
+        <div class="custom-form-group" id="content">
+            <div id="darkLayer" class="darkClass" style="display:none"></div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Admin (Office)</label>
+                <input type="text" class="form-control" id="adOffc">
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlInput1">Name</label>
+                <input type="text" class="form-control" id="adName">
+            </div>
+        </div>
+        <hr class="my-4">
+    </form>
+
+    <!-- STUDENTS -->
+    <form action="" method="post" id="stuForm">
+        
+        <div class="form-check" id="cbStu">
+            <input type="checkbox" class="form-check-input" id="boxStu">
+            <label class="form-check-label" for="exampleCheck1">Student Form</label>
+        </div>
+
+
+        <div class="form-group stuDept" id="content">
+            <div id="darkLayerr" class="darkClass" style="display:none"></div>
+            <label for="exampleInputPassword1">Student (Department)</label>
+            <input type="text" class="form-control" id="stuDept">
+        </div>
+
+        <div class="custom-form-group" id="content">
+            <div id="darkLayerrr" class="darkClass" style="display:none"></div>
+            <div class="form-group">
+                <label for="stuName">Name</label>
+                <input type="text" class="form-control" id="stuName">
+            </div>
+            <div class="form-group">
+                <label for="stuYear">Year</label>
+                <input type="number" class="form-control" id="stuYear">
+            </div>
+        </div>
+        <div class="custom-form-group" id="content">
+            <div id="darkLayerrrr" class="darkClass" style="display:none"></div>
+            <div class="form-group">
+                <label for="endorsed">Endorsed by</label>
+                <input type="text" class="form-control" id="endorsed">
+            </div>
+            <div class="form-group">
+                <label for="designation">Designation</label>
+                <input type="text" class="form-control" id="designation">
+            </div> 
+        </div> 
+        <hr class="my-4">
+    </form>
+
+    <footer class="text-center">
+        <img src="footer.png" alt="" style="width: 100%;">
+    </footer>
+
+    <script>
+    // Function to turn off the dark layer
+    function dimOff() {
+        darkLayers.forEach(layer => {
+            layer.style.display = "none";
+        });
+    }
+
+    // Function to turn on the dark layer
+    function dimOn() {
+        darkLayers.forEach(layer => {
+            layer.style.display = "";
+        });
+    }
+
+    // Dark layers array
+    var darkLayers = [
+        document.getElementById("darkLayer"),
+        document.getElementById("darkLayerr"),
+        document.getElementById("darkLayerrr"),
+        document.getElementById("darkLayerrrr")
+    ];
+
+    // Toggle the dark layer for Admin form
+    var i = 0;
+    document.getElementById("boxAd").addEventListener('click', function () {
+        [dimOff, dimOn][i = 1 - i]();
+    });
+
+    // Toggle the dark layer for Faculty form
+    var j = 0;
+    document.getElementById("boxFac").addEventListener('click', function () {
+        [dimOff, dimOn][j = 1 - j]();
+    });
+
+    // Toggle the dark layer for Students form
+    var k = 0;
+    document.getElementById("boxStu").addEventListener('click', function () {
+        [dimOff, dimOn][k = 1 - k]();
+    });
+</script>
+
+    
+</body>
+</html>
